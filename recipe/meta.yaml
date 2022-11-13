@@ -1,5 +1,5 @@
 {% set name = "types-setuptools" %}
-{% set version = "65.5.0.2" %}
+{% set version = "65.5.0.3" %}
 
 
 package:
@@ -8,7 +8,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/types-setuptools-{{ version }}.tar.gz
-  sha256: 9847de6d7087fb1dd4a88c2a21543d1b86a6179c36744f081974303fe2f30f50
+  sha256: 17769171f5f2a2dc69b25c0d3106552a5cda767bbf6b36cb6212b26dae5aa9fc
 
 build:
   number: 0
