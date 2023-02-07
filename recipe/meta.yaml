@@ -1,4 +1,4 @@
-{% set version = "67.1.0.1" %}
+{% set version = "67.1.0.2" %}
 
 package:
   name: types-setuptools
@@ -8,7 +8,7 @@ source:
   - url: https://raw.githubusercontent.com/python/typeshed/main/LICENSE
     sha256: 295f8538c94ae5c3043301cf7cff1c852dab6a786a8ddee471e061b40d5ecabe
   - url: https://pypi.io/packages/source/t/types-setuptools/types-setuptools-{{ version }}.tar.gz
-    sha256: ced7adec2b32aac064381fca47402245b033917a0d69d4ba83241bb24ac50d00
+    sha256: 947ea9d25222330e47f56e8960955b36ae6b4d589da09ab50561f1ed5e22ab2f
 
 build:
   number: 0
