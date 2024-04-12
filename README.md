@@ -145,4 +145,5 @@ Feedstock Maintainers
 
 * [@conda-forge/mypy](https://github.com/conda-forge/mypy/)
 * [@fhoehle](https://github.com/fhoehle/)
+* [@wolfv](https://github.com/wolfv/)
 
