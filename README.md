@@ -143,7 +143,7 @@ In order to produce a uniquely identifiable distribution:
 Feedstock Maintainers
 =====================
 
-* [@conda-forge/mypy](https://github.com/conda-forge/mypy/)
+* [@conda-forge/mypy](https://github.com/orgs/conda-forge/teams/mypy/)
 * [@fhoehle](https://github.com/fhoehle/)
 * [@wolfv](https://github.com/wolfv/)
 
