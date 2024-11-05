@@ -5,13 +5,13 @@ package:
   version: {{ version }}
 
 source:
-  - url: https://pypi.io/packages/source/t/types-setuptools/types-setuptools-{{ version }}.tar.gz
+  - url: https://pypi.org/packages/source/t/types-setuptools/types-setuptools-{{ version }}.tar.gz
     sha256: 080883032fb26dfb91c748f69e4efbb202aeeb3f9e95e68bf7352b7ab215069f
   - url: https://raw.githubusercontent.com/python/typeshed/main/LICENSE
     sha256: 295f8538c94ae5c3043301cf7cff1c852dab6a786a8ddee471e061b40d5ecabe
 
 build:
-  number: 0
+  number: 1
   noarch: python
   script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
 
@@ -22,7 +22,6 @@ requirements:
     - pip
   run:
     - python >=3.8
-
 
 test:
   commands:
