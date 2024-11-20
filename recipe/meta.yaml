@@ -1,4 +1,4 @@
-{% set version = "75.5.0.20241121" %}
+{% set version = "75.5.0.20241122" %}
 
 {% set python_min = python_min | default("3.9") %}
 
@@ -8,7 +8,7 @@ package:
 
 source:
   - url: https://pypi.org/packages/source/t/types-setuptools/types_setuptools-{{ version }}.tar.gz
-    sha256: 47b261411cfca811681183f5371656ebc3d8e722b8ee857276fdb5402e5f6fb3
+    sha256: 196aaf1811cbc1c77ac1d4c4879d5308b6fdf426e56b73baadbca2a1827dadef
   - url: https://raw.githubusercontent.com/python/typeshed/main/LICENSE
     sha256: 295f8538c94ae5c3043301cf7cff1c852dab6a786a8ddee471e061b40d5ecabe
 
