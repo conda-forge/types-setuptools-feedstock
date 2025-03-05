@@ -38,8 +38,13 @@ tests:
         - python ${{ python_min }}.*
     script:
       - pip check
-      - test -f $SP_DIR/setuptools-stubs/__init__.pyi
-      - test -f $SP_DIR/distutils-stubs/__init__.pyi
+      - if: unix
+        then:
+          - test -f "${SP_DIR}/distutils-stubs/__init__.pyi"
+          - test -f "${SP_DIR}/setuptools-stubs/__init__.pyi"
+        else:
+          - dir "%SP_DIR%\distutils-stubs\__init__.pyi" || exit 1
+          - dir "%SP_DIR%\setuptools-stubs\__init__.pyi" || exit 1
   - requirements:
       run:
         - mypy
@@ -47,6 +52,7 @@ tests:
         - setuptools
     script:
       - pip check
+      - mypy -p pkg_resources
       - mypy -p setuptools
       - mypy -p distutils
 
