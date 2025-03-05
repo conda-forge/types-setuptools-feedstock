@@ -32,29 +32,27 @@ requirements:
     - setuptools >=71.1
 
 tests:
-  - requirements:
+  - files:
+      recipe:
+        - run_test.py
+    requirements:
       run:
         - pip
         - python ${{ python_min }}.*
     script:
+      # check for errors
       - pip check
-      - if: unix
-        then:
-          - test -f "${SP_DIR}/distutils-stubs/__init__.pyi"
-          - test -f "${SP_DIR}/setuptools-stubs/__init__.pyi"
-        else:
-          - dir "%SP_DIR%\distutils-stubs\__init__.pyi" || exit 1
-          - dir "%SP_DIR%\setuptools-stubs\__init__.pyi" || exit 1
+      # check for existence of stubs
+      - python run_test.py
   - requirements:
       run:
         - mypy
+        - packaging
         - python ${{ python_min }}.*
         - setuptools
     script:
       - pip check
-      - mypy -p pkg_resources
-      - mypy -p setuptools
-      - mypy -p distutils
+      - mypy -p setuptools -p distutils --exclude "/tests/"
 
 about:
   summary: Typing stubs for setuptools
