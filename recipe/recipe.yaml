@@ -42,13 +42,16 @@ tests:
         - types_setuptools-*.dist-info/**
   - requirements:
       run:
-        - mypy
-        - packaging
         - pip
+        - python ${{ python_min }}.*
+    script:
+      - pip check
+  - requirements:
+      run:
+        - mypy
         - python ${{ python_min }}.*
         - setuptools
     script:
-      - pip check
       - mypy -p setuptools -p distutils --exclude "/tests/" --exclude "/compilers/C/"
 
 about:
