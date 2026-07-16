@@ -33,9 +33,13 @@ requirements:
 
 tests:
   - package_contents:
+      strict: true
       site_packages:
+        - distutils-stubs/**
         - distutils-stubs/__init__.pyi
+        - setuptools-stubs/**
         - setuptools-stubs/__init__.pyi
+        - types_setuptools-*.dist-info/**
   - requirements:
       run:
         - mypy
