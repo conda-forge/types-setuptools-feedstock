@@ -48,7 +48,7 @@ tests:
         - python ${{ python_min }}.*
         - setuptools
     script:
-      - pip
+      - pip check
       - mypy -p setuptools -p distutils --exclude "/tests/" --exclude "/compilers/C/"
 
 about:
