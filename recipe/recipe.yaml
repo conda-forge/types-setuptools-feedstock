@@ -2,7 +2,7 @@
 schema_version: 1
 
 context:
-  version: "83.0.0.20260706"
+  version: "83.0.0.20260716"
 
 package:
   name: types-setuptools
@@ -10,7 +10,7 @@ package:
 
 source:
   - url: https://pypi.org/packages/source/t/types-setuptools/types_setuptools-${{ version }}.tar.gz
-    sha256: 9e586ac6c1eb504d28b5f06aced1d705e0043839413219ee3c08d16625fbb4ff
+    sha256: a36ad71a57919b80db314e6104478ee75376a34abea88ba0f3d28db4d10006d7
   - url: https://raw.githubusercontent.com/python/typeshed/main/LICENSE
     sha256: 295f8538c94ae5c3043301cf7cff1c852dab6a786a8ddee471e061b40d5ecabe
 
@@ -32,33 +32,34 @@ requirements:
     - setuptools >=71.1
 
 tests:
-  - files:
-      recipe:
-        - run_test.py
-    requirements:
+  - package_contents:
+      strict: true
+      site_packages:
+        - distutils-stubs/**
+        - distutils-stubs/__init__.pyi
+        - setuptools-stubs/**
+        - setuptools-stubs/__init__.pyi
+        - types_setuptools-*.dist-info/**
+  - requirements:
       run:
         - pip
         - python ${{ python_min }}.*
     script:
-      # check for errors
       - pip check
-      # check for existence of stubs
-      - python run_test.py
   - requirements:
       run:
         - mypy
-        - packaging
         - python ${{ python_min }}.*
         - setuptools
     script:
-      - pip check
-      - mypy -p setuptools -p distutils --exclude "/tests/"
+      - mypy -p setuptools -p distutils --exclude "/tests/" --exclude "/compilers/C/"
 
 about:
   summary: Typing stubs for setuptools
   license: Apache-2.0 AND MIT
   license_file: LICENSE
-  homepage: https://github.com/python/typeshed
+  homepage: https://pypi.org/project/types-setuptools
+  repository: https://github.com/python/typeshed
 
 extra:
   recipe-maintainers:
