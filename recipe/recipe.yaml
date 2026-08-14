@@ -52,7 +52,7 @@ tests:
         - python ${{ python_min }}.*
         - setuptools
     script:
-      - mypy -p setuptools -p distutils --exclude "/tests/" --exclude "/compilers/C/" --exlude "/compilers/platform/detect.py"
+      - mypy -p setuptools -p distutils --exclude "/tests/" --exclude "/compilers/C/" --exclude "/compilers/platform/detect.py"
 
 about:
   summary: Typing stubs for setuptools
