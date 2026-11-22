@@ -2,7 +2,7 @@
 schema_version: 1
 
 context:
-  version: "84.2.0.20261104"
+  version: "84.2.0.20261122"
 
 package:
   name: types-setuptools
@@ -10,7 +10,7 @@ package:
 
 source:
   - url: https://pypi.org/packages/source/t/types-setuptools/types_setuptools-${{ version }}.tar.gz
-    sha256: 1ec758bbeddf88d52f963fe663beabc2117b6aae73cf3d2902d7dd0df81bd76e
+    sha256: 5c513edc18ac4e5feb11204c379e15c26b849127f569e8d5284e380986cbdcc8
   - url: https://raw.githubusercontent.com/python/typeshed/main/LICENSE
     sha256: 295f8538c94ae5c3043301cf7cff1c852dab6a786a8ddee471e061b40d5ecabe
 
